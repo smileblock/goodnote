@@ -1,12 +1,14 @@
 package graph
 
 import (
+	"goodnode/pkg/logger"
 	"testing"
 )
 
 func TestNewNode(t *testing.T) {
-	_, err := NewNode(NodeKindFile)
+	node, err := NewNode("AA")
 	if err != nil {
-		print(err)
+		logger.Err(err)
 	}
+	logger.Debug(node)
 }
